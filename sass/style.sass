@@ -1,0 +1,214 @@
+//fonts
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,600&family=Playfair+Display:wght@400;600;700&display=swap')
+//color
+$first-color: #FF8500
+$second-color: #E55D32
+$third-color: #FFD796
+$fourth-color: #D1A770
+$black-color: #000000
+$white-color: #ffffff
+h1,h2,h3,h4,h5,a
+    text-decoration: none
+
+.btn
+    margin: 0 auto
+    margin-top: 20px
+    border: none
+    outline: none
+    background-color: $first-color
+    width: 260px;
+    height: 95px;
+    border-radius: 20px;
+    text-transform: uppercase
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 29px;
+    letter-spacing: 0.1em;
+.line
+    color: #636363
+*
+    font-family: 'Montserrat', sans-serif
+    color: $white-color
+//heder
+.first_display
+   
+    height: 1030px
+    padding: 50px 0
+    &_navigation
+        display: flex
+        justify-content: space-between
+        align-items: center
+    &_menu
+        display: flex
+        &_btn
+            text-decoration: none
+            color: $white-color
+            margin-right: 50px
+            font-family: 'Montserrat'
+            font-style: normal
+            font-weight: 400
+            font-size: 18px
+            transition: all .2s
+            &_search
+                width: 20px
+                height: 20px
+        &_btn:hover
+            color: $second-color
+       
+    &_container
+        margin: 0 auto
+        margin-top: 310px
+        text-align: center
+        max-width: 1053px
+        &_text
+            font-family: 'Playfair Display', serif
+            font-weight: 700
+            font-size: 48px
+        &_subtext
+            margin-top: 30px
+            font-family: 'Playfair Display', serif
+            font-weight: 400
+            font-size: 32px
+        .btn
+            margin-top: 120px
+
+//about us
+.about
+    padding: 90px 0
+    max-height: 2100px
+    &_text
+        font-family: 'Playfair Display'
+        font-style: normal
+        font-weight: 400
+        font-size: 45px
+        color: $black-color
+        margin-bottom: 50px
+    &_us
+        margin-top: 95px
+    h3
+        color: $black-color
+        font-family: 'Playfair Display'
+        font-style: normal
+        font-weight: 400
+        font-size: 32px
+    p
+        margin-top: 30px
+        color: $black-color
+        font-weight: 400
+        font-size: 24px
+        line-height: 50px
+        text-align: justify
+
+//slider
+.slider
+    margin: 120px 0
+.offer__slider
+    position: relative            
+    // &-prev
+    //     img
+    //         position: absolute
+    //         top: 50%
+    // &-next
+    //     img
+    //         position: absolute
+    //         right: 0
+    //         top: 50%
+    position: relative
+    &-wrapper
+        
+    &_inner
+        overflow: hidden
+        
+        display: flex
+        .offer__slide
+            margin-left: 60px
+
+//contact
+.contact
+    max-height: 1083px
+    padding: 143px 0
+    background: url(../img/main/8.png) center (center / cover) no-repeat
+    &_container
+        h2
+            text-align: center
+            font-family: 'Playfair Display'
+            font-style: normal
+            font-weight: 400
+            font-size: 60px
+    &_form
+        padding: 32px 123px 50px 123px
+        margin: 0 auto
+        margin-top: 58px
+        width: 706px
+        height: 659px
+        background: #FFFFFF
+        border-radius: 20px
+        h2
+            color: $black-color
+            font-family: 'Playfair Display'
+            font-style: normal
+            font-weight: 400
+            font-size: 30px
+        form
+            display: flex
+            flex-direction: column
+            margin-top: 30px
+            .modal__input
+                width: 460px
+                height: 50px
+                margin-top: 30px
+                border: 1px $black-color solid
+            input::placeholder
+                padding: 20px
+            .text_area
+                width: 460px
+                height: 135px
+                margin-top: 30px
+                border: 1px $black-color solid
+            textarea::placeholder
+                padding: 20px
+
+.footer
+    padding: 140px 0
+    .social
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin: 30px 0
+        cursor: pointer
+        &_container
+            img
+                margin-right: 40px
+    .all_contact
+        display: flex
+        justify-content: space-between
+        .footer_contact
+            h2
+                color: $black-color
+                font-family: 'Playfair Display'
+                font-style: normal
+                font-weight: 400
+                font-size: 40px
+            h3
+                color: $black-color
+                font-family: 'Playfair Display'
+                font-style: normal
+                font-weight: 400
+                font-size: 30px
+            p
+                font-family: 'Montserrat'
+                font-style: normal
+                font-weight: 400
+                font-size: 20px
+                margin-top: 20px
+                color: $black-color
+            .footer_contact_content_inner
+                margin-top: 50px
+                display: flex
+                img
+                    width: 40px
+                    height: 40px
+                    margin-right: 20px
