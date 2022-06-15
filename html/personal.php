@@ -1,3 +1,23 @@
+<?php
+require "Database.php";
+$Database = new Database();
+
+$qry = "SELECT * FROM student INNER JOIN tables_by_roles ON student.ID_Tables_by_roles = tables_by_roles.ID_Tables_by_roles";
+
+$user = $Database->getRow($qry);
+
+
+$id = $user["Link_table"];
+$gid = $user["Page_code"];
+$csv = file_get_contents('https://docs.google.com/spreadsheets/d/' . $id . '/export?format=csv&gid=' . $gid);
+$csv = explode("\r\n", $csv);
+$array = array_map('str_getcsv', $csv);
+
+var_dump($array);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -1,3 +1,35 @@
+
+<?php
+        require 'Database.php';
+        require "sys.php";
+
+        if(isset($_POST["login"]) && isset($_POST["password"])) {
+            $Database = new Database();
+            $qry = "SELECT * FROM student INNER JOIN authorization ON student.ID_Authorization = authorization.ID_Authorization WHERE Login = :login AND BINARY Password = :password";
+            $parm = (array(
+                "login" => $_POST["login"],
+                "password" => $_POST["password"]
+            ));
+            $user = $Database->getRow($qry,$parm);
+            if (!$user) {
+                $qry = "SELECT * FROM professor INNER JOIN authorization ON professor.ID_Authorization = authorization.ID_Authorization WHERE Login = :login AND BINARY Password = :password";
+                $professor = $Database->getRow($qry,$parm);
+
+                if($professor){
+                    saveProfAuth($professor);
+                }
+                else{
+                    $_SESSION['errors_prof'] = 'sdfsdg';
+                }
+            }
+            if($user){
+                saveUserAuth($user);
+            }
+            elseif (!$professor) {
+                $_SESSION['errors_user'] = 'Невыasdasdadaафыавыф';
+            }
+        }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,9 +53,9 @@
             </div>
             <div class="contact_form">
                 <h2>Введите ваши данные!</h2>
-                <form action="#">
-                    <input required placeholder="Логин" name="name" type="text" class="modal__input">
-                    <input required placeholder="Пароль" name="phone" type="text" class="modal__input">
+                <form action="#" method="POST">
+                    <input required placeholder="Логин" name="login" type="login" class="modal__input">
+                    <input required placeholder="Пароль" name="password" type="password" class="modal__input">
                     <button class="btn">Войти</button>
                 </form>
             </div>
