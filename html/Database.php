@@ -1,5 +1,5 @@
 <?php
-    session_start();
+	session_start();
 
 	class Database {
 		private $host;
@@ -22,15 +22,15 @@
 		}
 
 		private function getDb() {
-			 $this->conn = new PDO(
+			$this->conn = new PDO(
 				"mysql:host=$this->host;
 				port=$this->port;
 				dbname=$this->db;
 				charset=$this->db_enc",
 				$this->db_usr,
 				$this->db_pwd,
-			 );
-			 return $this->conn;
+			);
+			return $this->conn;
 		}
 		public function set($qry,$parm = array()){
 			$rslt = $this->getDb()->prepare($qry); 

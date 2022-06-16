@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,20 +25,28 @@
 					<a href="contact.php" class="first_display_menu_btn">Контакты</a>
 					<a href="specialnost.php" class="first_display_menu_btn">Специальности</a>
 					<a href="curs.php" class="first_display_menu_btn">Курсы</a>
-					<a href="prepod.php" class="first_display_menu_btn">Преподователю</a>
-					<a href="login.php" class="first_display_menu_btn">Вход</a>
 					<a href="styd.php" class="first_display_menu_btn">Студенту</a>
+					<?php
+							if (isset($_SESSION["rule"]) && $_SESSION["rule"] == 4)
+								echo '<a href="prepod.php" class="first_display_menu_btn">'. $_SESSION["user_name"] .'</a>';
+							elseif(isset($_SESSION["rule"]) && $_SESSION["rule"] == 3){
+								echo '<a href="personal.php" class="first_display_menu_btn">'. $_SESSION["user_name"] .'</a>';
+							}
+							else{
+								echo '<a href="login.php" class="first_display_menu_btn">Вход</a>'; 
+							}  
+						?>
 					<img src="../icons/search_black.png" alt="search" class="first_display_menu_btn_search" >    
 				</nav>
 			</div>
 		</div>
 	</header>
-   <section class="raspis">
-	   <div class="container">
-		   <h2 class="about_text">Утвержденное расписание</h2>
-		   <hr class="line">
-		   <div class="raspis_container">
-			   <div class="raspis_container_content">
+	<section class="raspis">
+		<div class="container">
+			<h2 class="about_text">Утвержденное расписание</h2>
+			<hr class="line">
+			<div class="raspis_container">
+				<div class="raspis_container_content">
 					<a href="https://mpt.ru/studentu/raspisanie-zanyatiy/pdfRaspisanie/%D0%A0%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5%20%D0%B7%D0%B0%D0%BD%D1%8F%D1%82%D0%B8%D0%B9%2009.02.06.pdf"  target="_blank">
 					<div class="raspis_container_content_pdf">
 							<img src="../icons/pdf.png" alt="">
@@ -57,7 +68,7 @@
 						</div>
 					</a>
 				</div>
-		   </div>
+			</div>
 		</div>
 	</section>
 	<section class="zvon">
@@ -74,7 +85,7 @@
 						<li>"5" пара-15.40-17.10</li>
 					</ul>
 					<img src="../icons/coloc.png" alt="coloc">
-				 </div>
+				</div>
 			</div>
 		</div>
 	</section>

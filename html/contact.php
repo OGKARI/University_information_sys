@@ -1,3 +1,6 @@
+<?php 
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,12 +25,20 @@
 			<div class="first_display_navigation">
 				<a href="index.php"><img src="../icons/Logo.svg" alt="Logo"></a>
 				<nav class="first_display_menu">
-					<a href="contact.php" class="first_display_menu_btn">Контакты</a>
+				<a href="contact.php" class="first_display_menu_btn">Контакты</a>
 					<a href="specialnost.php" class="first_display_menu_btn">Специальности</a>
 					<a href="curs.php" class="first_display_menu_btn">Курсы</a>
-					<a href="prepod.php" class="first_display_menu_btn">Преподователю</a>
-					<a href="login.php" class="first_display_menu_btn">Вход</a>
 					<a href="styd.php" class="first_display_menu_btn">Студенту</a>
+					<?php
+							if (isset($_SESSION["rule"]) && $_SESSION["rule"] == 4)
+								echo '<a href="prepod.php" class="first_display_menu_btn">'. $_SESSION["user_name"] .'</a>';
+							elseif(isset($_SESSION["rule"]) && $_SESSION["rule"] == 3){
+								echo '<a href="personal.php" class="first_display_menu_btn">'. $_SESSION["user_name"] .'</a>';
+							}
+							else{
+								echo '<a href="login.php" class="first_display_menu_btn">Вход</a>'; 
+							}  
+						?>
 					<img src="../icons/search_black.png" alt="search" class="first_display_menu_btn_search" >    
 				</nav>
 			</div>
@@ -100,7 +111,7 @@
 							</div>
 						</div>
 					</div>
-					  <!-- Данный блок нужен для создания формы ответа-->
+<!-- Данный блок нужен для создания формы ответа-->
 					<div class="form">
 						<div class="contact_container">
 							<div class="contact_form">
@@ -119,7 +130,7 @@
 			</div>  
 		</div>
 	</section>
-	   <!-- Блок футер нужен для создания подвала сайта-->
+<!-- Блок футер нужен для создания подвала сайта-->
 	<footer class="footer">
 		<div class="container">
 			<hr class="line">
