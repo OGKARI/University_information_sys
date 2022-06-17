@@ -1,5 +1,10 @@
 <?php
 require "Database.php";
+
+if(!$_SESSION['autchProf']){
+    header("Location: login.php");
+    exit;
+}
 $Database = new Database();
 
 $qry = "SELECT * FROM professor INNER JOIN tables_by_roles ON professor.ID_Tables_by_roles = tables_by_roles.ID_Tables_by_roles INNER JOIN education ON professor.ID_Education = education.ID_Education ";

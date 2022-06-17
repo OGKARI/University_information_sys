@@ -1,5 +1,22 @@
-<?php 
-	session_start();
+<?php
+require "Database.php";
+if(isset($_POST["name"]) && isset($_POST["phone"]) && isset($_POST["mail"]) && isset($_POST["messege"])){
+
+	$Database = new Database();
+	$qry = "INSERT INTO feedback (name, phone, mail, messege) VALUES (:name, :phone, :mail, :messege)";
+	$parm = array(
+		"name" => $_POST["name"],
+		"phone" => $_POST["phone"],
+		"mail" => $_POST["mail"],
+		"messege" => $_POST["messege"]
+
+	);
+	
+	$Database->insertData($qry,$parm);
+	$_SESSION["mes"] = true;
+
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -116,10 +133,10 @@
 						<div class="contact_container">
 							<div class="contact_form">
 								<h2>Введите ваши данные!</h2>
-								<form action="#">
-									<input required placeholder="Имя" name="name" type="text" class="modal__input">
-									<input required placeholder="Телефон" name="phone" type="text" class="modal__input">
-									<input required placeholder="Почта" name="phone" type="text" class="modal__input">
+								<form action="#" method="POST">
+									<input required placeholder="Имя" name="name" type="name" class="modal__input">
+									<input required placeholder="Телефон" name="phone" type="phone" class="modal__input">
+									<input required placeholder="Почта" name="mail" type="email" class="modal__input">
 									<textarea placeholder="Сообщение" name="messege" class="text_area"></textarea>
 									<button class="btn">связаться</button>
 								</form>
@@ -145,6 +162,11 @@
 			</div>
 		</div>    
 	</footer>
+	<?php
+		if (isset($_SESSION['mes'])) {
+			echo '<script>window.addEventListener("DOMContentLoaded",()=>{alert( "Ваше сообщение отправлено" );});</script>';}
+		unset($_SESSION['mes']);
+	?>
 	<script src="../js/script.js"></script>
 </body>
 </html>

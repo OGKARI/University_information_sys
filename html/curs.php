@@ -1,10 +1,27 @@
-<?php 
-	session_start();
+<?php
+require "Database.php";
+if(isset($_POST["name"]) && isset($_POST["phone"]) && isset($_POST["mail"]) && isset($_POST["messege"])){
+
+	$Database = new Database();
+	$qry = "INSERT INTO feedback (name, phone, mail, messege) VALUES (:name, :phone, :mail, :messege)";
+	$parm = array(
+		"name" => $_POST["name"],
+		"phone" => $_POST["phone"],
+		"mail" => $_POST["mail"],
+		"messege" => $_POST["messege"]
+
+	);
+	
+	$Database->insertData($qry,$parm);
+	$_SESSION["mes"] = true;
+
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!-- Данный блок кода предназначен для добовления лого на шапку сайта и подключения стилей и основной мета информации  -->
+<!-- Данный блок кода предназначен для добовления лого на шапку сайта и подключения стилей и основной мета информации  -->
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,7 +54,7 @@
 								echo '<a href="login.php" class="first_display_menu_btn">Вход</a>'; 
 							}  
 						?>
-					<img src="../icons/search_black.png" alt="search" class="first_display_menu_btn_search" >    
+					<img src="../icons/search_bel.png" alt="search" class="first_display_menu_btn_search" >    
 				</nav>
 			</div>
 			<div class="first_display_container">
@@ -47,10 +64,10 @@
 <!-- Данный блок нужен для создания формы ответа-->
 				<div class="contact_form">
 					<h2>Введите ваши данные!</h2>
-					<form action="#">
-						<input required placeholder="Имя" name="name" type="text" class="modal__input">
-						<input required placeholder="Телефон" name="phone" type="text" class="modal__input">
-						<input required placeholder="Почта" name="phone" type="text" class="modal__input">
+					<form action="#" method="POST">
+						<input required placeholder="Имя" name="name" type="name" class="modal__input">
+						<input required placeholder="Телефон" name="phone" type="phone" class="modal__input">
+						<input required placeholder="Почта" name="mail" type="email" class="modal__input">
 						<textarea placeholder="Сообщение" name="messege" class="text_area"></textarea>
 						<button class="btn">связаться</button>
 					</form>
@@ -167,9 +184,17 @@
 						</div>
 					</div>
 				</div> 
-			</div>   
+			</div>
+			<a href="#" class="footer_up">
+				<img src="../icons/up.svg" alt="up">
+			</a>   
 		</div>    
 	</footer>
+	<?php
+		if (isset($_SESSION['mes'])) {
+			echo '<script>window.addEventListener("DOMContentLoaded",()=>{alert( "Ваше сообщение отправлено" );});</script>';}
+		unset($_SESSION['mes']);
+	?>
 	<script src="../js/script.js"></script>
 </body>
 </html>

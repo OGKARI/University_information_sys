@@ -1,6 +1,7 @@
 <?php
 	function saveUserAuth($user) {
 		$_SESSION = [];
+		$_SESSION["autchStudent"] = true;
 		$_SESSION["rule"] = $user["ID_Role"];
 		$_SESSION["login"] = $user["Login"];
 		$_SESSION["user_name"] = $user["Student_name"];
@@ -10,6 +11,7 @@
 	} 
 	function saveProfAuth($user) {
 		$_SESSION = [];
+		$_SESSION["autchProf"] = true;
 		$_SESSION["rule"] = $user["ID_Role"];
 		$_SESSION["login"] = $user["Login"];
 		$_SESSION["user_name"] = $user["Professor_name"];

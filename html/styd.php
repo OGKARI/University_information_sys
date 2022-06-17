@@ -163,7 +163,10 @@
 						</div>
 					</div>
 				</div> 
-			</div>   
+			</div>  
+			<a href="#" class="footer_up">
+				<img src="../icons/up.svg" alt="up">
+			</a>  
 		</div>    
 	</footer>
 	<script src="../js/script.js"></script>

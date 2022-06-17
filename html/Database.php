@@ -52,5 +52,12 @@
 			$rslt->execute((array)$parm);
 			return $rslt->fetch(PDO::FETCH_ASSOC);
 			}
+        
+		public function getColumn($qry, $colNum, $parm = array()) {
+			$rslt = $this->getDb()->prepare($qry);
+			$rslt->execute((array)$parm);
+			$rslt = $rslt->fetchAll(PDO::FETCH_NUM);
+			return array_column($rslt, $colNum);
+		}	
 	
 }

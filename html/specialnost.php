@@ -37,7 +37,7 @@
 									echo '<a href="login.php" class="first_display_menu_btn">Вход</a>'; 
 								}  
 							?>
-						<img src="../icons/search_black.png" alt="search" class="first_display_menu_btn_search" >    
+						<img src="../icons/search_bel.png" alt="search" class="first_display_menu_btn_search" >    
 					</nav>
 				</div>
 			<div class="first_display_text">
@@ -71,7 +71,7 @@
 			</div>
 		</div>
 	</section>
-	   <!-- Блок футер нужен для создания подвала сайта-->
+<!-- Блок футер нужен для создания подвала сайта-->
 	<footer class="footer">
 		<div class="container">
 			<hr class="line">
@@ -145,7 +145,10 @@
 						</div>
 					</div>
 				</div> 
-			</div>   
+			</div>
+			<a href="#" class="footer_up">
+				<img src="../icons/up.svg" alt="up">
+			</a>   
 		</div>    
 	</footer>
 	<script src="../js/script.js"></script>
