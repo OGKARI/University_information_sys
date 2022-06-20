@@ -61,3 +61,10 @@
 		}	
 	
 }
+// Запросы
+// $qry = "DELETE FROM comments WHERE id_comments = :id";
+//  $parm = array(
+// 	":id"=>$_GET["id_comments"]);
+//     $Database->set($qry,$parm);
+// $qry = "SELECT * FROM student";
+// $Database->getColumn($qry);
