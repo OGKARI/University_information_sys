@@ -113,37 +113,7 @@ $array = array_map('str_getcsv', $csv);
 					<td><?=$array[2][7]?></td>
 				</tr>
 				<tr>
-					<td class="table_first_column"><?=$array[2][0]?></td>
-					<td><?=$array[2][1]?></td>
-					<td><?=$array[2][2]?></td>
-					<td><?=$array[2][3]?></td>
-					<td><?=$array[2][4]?></td>
-					<td><?=$array[2][5]?></td>
-					<td><?=$array[2][6]?></td>
-					<td><?=$array[2][7]?></td>
-				</tr>
-				<tr>
-					<td class="table_first_column"><?=$array[2][0]?></td>
-					<td><?=$array[2][1]?></td>
-					<td><?=$array[2][2]?></td>
-					<td><?=$array[2][3]?></td>
-					<td><?=$array[2][4]?></td>
-					<td><?=$array[2][5]?></td>
-					<td><?=$array[2][6]?></td>
-					<td><?=$array[2][7]?></td>
-				</tr>
-				<tr>
-					<td class="table_first_column"><?=$array[2][0]?></td>
-					<td><?=$array[2][1]?></td>
-					<td><?=$array[2][2]?></td>
-					<td><?=$array[2][3]?></td>
-					<td><?=$array[2][4]?></td>
-					<td><?=$array[2][5]?></td>
-					<td><?=$array[2][6]?></td>
-					<td><?=$array[2][7]?></td>
-				</tr>
-				<tr>
-				<td class="table_first_column"><?=$array[3][0]?></td>
+					<td class="table_first_column"><?=$array[3][0]?></td>
 					<td><?=$array[3][1]?></td>
 					<td><?=$array[3][2]?></td>
 					<td><?=$array[3][3]?></td>
@@ -173,7 +143,7 @@ $array = array_map('str_getcsv', $csv);
 					<td><?=$array[5][7]?></td>
 				</tr>
 				<tr>
-					<td class="table_first_column"><?=$array[6][0]?></td>
+				<td class="table_first_column"><?=$array[6][0]?></td>
 					<td><?=$array[6][1]?></td>
 					<td><?=$array[6][2]?></td>
 					<td><?=$array[6][3]?></td>
@@ -311,6 +281,36 @@ $array = array_map('str_getcsv', $csv);
 					<td><?=$array[19][5]?></td>
 					<td><?=$array[19][6]?></td>
 					<td><?=$array[19][7]?></td>
+				</tr>
+				<tr>
+					<td class="table_first_column"><?=$array[20][0]?></td>
+					<td><?=$array[20][1]?></td>
+					<td><?=$array[20][2]?></td>
+					<td><?=$array[20][3]?></td>
+					<td><?=$array[20][4]?></td>
+					<td><?=$array[20][5]?></td>
+					<td><?=$array[20][6]?></td>
+					<td><?=$array[20][7]?></td>
+				</tr>
+				<tr>
+					<td class="table_first_column"><?=$array[21][0]?></td>
+					<td><?=$array[21][1]?></td>
+					<td><?=$array[21][2]?></td>
+					<td><?=$array[21][3]?></td>
+					<td><?=$array[21][4]?></td>
+					<td><?=$array[21][5]?></td>
+					<td><?=$array[21][6]?></td>
+					<td><?=$array[21][7]?></td>
+				</tr>
+				<tr>
+					<td class="table_first_column"><?=$array[22][0]?></td>
+					<td><?=$array[22][1]?></td>
+					<td><?=$array[22][2]?></td>
+					<td><?=$array[22][3]?></td>
+					<td><?=$array[22][4]?></td>
+					<td><?=$array[22][5]?></td>
+					<td><?=$array[22][6]?></td>
+					<td><?=$array[22][7]?></td>
 				</tr>
 			</table>
 		</div>
